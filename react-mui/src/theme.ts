@@ -1,4 +1,3 @@
-
 export interface ColorTokenType {
   background: string;
   foreground: string;
@@ -6,11 +5,41 @@ export interface ColorTokenType {
   cardForeground: string;
   popover: string;
   popoverForeground: string;
-  primary: string;
+  primary: {
+    100: string;
+    200: string;
+    300: string;
+    400: string;
+    500: string;
+    600: string;
+    700: string;
+    800: string;
+    900: string;
+  };
   primaryForeground: string;
-  secondary: string;
+  secondary: {
+    100: string;
+    200: string;
+    300: string;
+    400: string;
+    500: string;
+    600: string;
+    700: string;
+    800: string;
+    900: string;
+  };
   secondaryForeground: string;
-  muted: string;
+  muted: {
+    100: string;
+    200: string;
+    300: string;
+    400: string;
+    500: string;
+    600: string;
+    700: string;
+    800: string;
+    900: string;
+  };
   mutedForeground: string;
   accent: string;
   accentForeground: string;
@@ -29,11 +58,41 @@ export const lightColorTokens: ColorTokenType = {
   cardForeground: "hsl(222.2, 84%, 4.9%)",
   popover: "hsl(0, 0%, 100%)",
   popoverForeground: "hsl(222.2, 84%, 4.9%)",
-  primary: "hsl(221.2, 83.2%, 53.3%)",
+  primary: {
+    100: "#d3e0fb",
+    200: "#a8c1f7",
+    300: "#7ca1f3",
+    400: "#5182ef",
+    500: "#2563eb",
+    600: "#1e4fbc",
+    700: "#163b8d",
+    800: "#0f285e",
+    900: "#07142f",
+  },
   primaryForeground: "hsl(210, 40%, 98%)",
-  secondary: "hsl(210, 40%, 96.1%)",
+  secondary: {
+    100: "#fcfdfe",
+    200: "#f9fbfd",
+    300: "#f7f9fb",
+    400: "#f4f7fa",
+    500: "#f1f5f9",
+    600: "#c1c4c7",
+    700: "#919395",
+    800: "#606264",
+    900: "#303132",
+  },
   secondaryForeground: "hsl(222.2, 47.4%, 11.2%)",
-  muted: "hsl(210, 40%, 96.1%)",
+  muted: {
+    100: "#fcfdfe",
+    200: "#f9fbfd",
+    300: "#f7f9fb",
+    400: "#f4f7fa",
+    500: "#f1f5f9",
+    600: "#c1c4c7",
+    700: "#919395",
+    800: "#606264",
+    900: "#303132",
+  },
   mutedForeground: "hsl(215.4, 16.3%, 46.9%)",
   accent: "hsl(210, 40%, 96.1%)",
   accentForeground: "hsl(222.2, 47.4%, 11.2%)",
@@ -52,11 +111,41 @@ export const darkColorTokens: ColorTokenType = {
   cardForeground: "hsl(210, 40%, 98%)",
   popover: "hsl(222.2, 84%, 4.9%)",
   popoverForeground: "hsl(210, 40%, 98%)",
-  primary: "hsl(217.2, 91.2%, 59.8%)",
+  primary: {
+    100: "#d8e6fd",
+    200: "#b1cdfb",
+    300: "#89b4fa",
+    400: "#629bf8",
+    500: "#3b82f6",
+    600: "#2f68c5",
+    700: "#234e94",
+    800: "#183462",
+    900: "#0c1a31",
+  },
   primaryForeground: "hsl(222.2, 47.4%, 11.2%)",
-  secondary: "hsl(217.2, 32.6%, 17.5%)",
+  secondary: {
+    100: "#d2d4d8",
+    200: "#a5a9b1",
+    300: "#787f89",
+    400: "#4b5462",
+    500: "#1e293b",
+    600: "#18212f",
+    700: "#121923",
+    800: "#0c1018",
+    900: "#06080c",
+  },
   secondaryForeground: "hsl(210, 40%, 98%)",
-  muted: "hsl(217.2, 32.6%, 17.5%)",
+  muted: {
+    100: "#d2d4d8",
+    200: "#a5a9b1",
+    300: "#787f89",
+    400: "#4b5462",
+    500: "#1e293b",
+    600: "#18212f",
+    700: "#121923",
+    800: "#0c1018",
+    900: "#06080c",
+  },
   mutedForeground: "hsl(215, 20.2%, 65.1%)",
   accent: "hsl(217.2, 32.6%, 17.5%)",
   accentForeground: "hsl(210, 40%, 98%)",
@@ -67,7 +156,6 @@ export const darkColorTokens: ColorTokenType = {
   ring: "hsl(224.3, 76.3%, 48%)",
   radius: "0.5rem",
 };
-
 
 export const typography = {
   fontSize: 12,

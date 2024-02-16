@@ -7,7 +7,6 @@ import RootLayout from "./layouts/RootLayout";
 import DashboardPage from "./app/pages/DashboardPage";
 import TestTheme from "./components/TestTheme";
 import { darkColorTokens, lightColorTokens, typography } from "./theme";
-import { Opacity } from "@mui/icons-material";
 
 interface AppProps {}
 
@@ -26,14 +25,18 @@ const App: FC<AppProps> = ({}) => {
           paper: colorTokens.card,
         },
         primary: {
-          main: colorTokens.primary,
+          main: colorTokens.primary[500],
+          light: colorTokens.primary[300],
+          dark: colorTokens.primary[700],
           contrastText: colorTokens.primaryForeground,
         },
         secondary: {
-          main: colorTokens.secondary,
+          light: colorTokens.secondary[300],
+          dark: colorTokens.secondary[700],
+          main: colorTokens.secondary[500],
           contrastText: colorTokens.secondaryForeground,
         },
-
+        grey: { ...colorTokens.muted },
         text: {
           primary: colorTokens.foreground,
           secondary: colorTokens.mutedForeground,
@@ -50,7 +53,7 @@ const App: FC<AppProps> = ({}) => {
       },
       typography: typography,
 
-      shape: { borderRadius: 8 },
+      shape: { borderRadius: 3.55 },
 
       components: {
         MuiButton: {
@@ -67,7 +70,7 @@ const App: FC<AppProps> = ({}) => {
           styleOverrides: {
             root: {
               ":hover": {
-                backgroundColor: colorTokens.muted,
+                backgroundColor: colorTokens.muted[400],
               },
             },
           },

@@ -21,9 +21,12 @@ import { useAppDispatch } from "@/app/hooks";
 import { setMode } from "@/app/state/modeSlice";
 import { Link } from "react-router-dom";
 
-interface NavbarProps {}
+interface NavbarProps {
+  setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+  openSidebar: boolean;
+}
 
-const Navbar: FC<NavbarProps> = ({}) => {
+const Navbar: FC<NavbarProps> = ({ setOpenSidebar, openSidebar }) => {
   const dispatch = useAppDispatch();
   const theme = useTheme();
   return (
@@ -37,27 +40,35 @@ const Navbar: FC<NavbarProps> = ({}) => {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between " }}>
-        <FlexBetween>
-          <IconButton onClick={() => console.log("sidebar open/close icon ")}>
+        <FlexBetween gap={2}>
+          <IconButton onClick={() => setOpenSidebar(!openSidebar)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
-            bgcolor={theme.palette.secondary.main}
+            bgcolor={theme.palette.secondary.dark}
             borderRadius={"0.5rem"}
             gap={"3rem"}
             px={"1.45rem"}
             py={"0.25rem"}
             sx={{
-              opacity: 0.6,
+              bgcolor:
+                theme.palette.mode === "dark"
+                  ? theme.palette.secondary.dark
+                  : theme.palette.secondary.light,
             }}
           >
-            <InputBase placeholder=" Search ..." />
+            <InputBase
+              placeholder=" Search ..."
+              sx={{
+                display: { xs: "none", md: "block" },
+              }}
+            />
             <IconButton>
               <SearchIcon />
             </IconButton>
           </FlexBetween>
         </FlexBetween>
-        <FlexBetween>
+        <FlexBetween gap={2}>
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkModeOutlined />
